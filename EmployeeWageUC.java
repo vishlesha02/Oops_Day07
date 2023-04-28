@@ -1,4 +1,4 @@
-//Check Employee is present or Absent
+
 
 
 
@@ -6,28 +6,27 @@ package Day7;
 
 public class EmployeeWageUC {
     public static void main(String[] args) {
-        int IS_PART_TIME=1;
-        int IS_FULL_TIME=2;
-        int Emp_RATE_PER_Hr=20;
+        final int IS_PART_TIME = 1;
+        final int IS_FULL_TIME = 2;
+        final int Emp_RATE_PER_HR = 20;
 
-        int EmpWage=0;
-        int EmpHrs=0;
-        double empcheck=Math.floor(Math.random()* 10)% 3;
+        int EmpHr = 0;
+        int EmpWage = 0;
+        int empcheck = (int) (Math.floor(Math.random() * 10) % 3);
 
+        switch (empcheck) {
+            case IS_PART_TIME:
+                EmpHr = 4;
+                break;
 
-        if(empcheck==IS_PART_TIME)
-        {
-            EmpHrs=4;
+            case IS_FULL_TIME:
+                EmpHr = 8;
+                break;
+
+            default:
+                EmpHr = 0;
         }
-        else if(empcheck == IS_FULL_TIME)
-        {
-            EmpHrs=8;
-        }
-        else {
-            EmpHrs=0;
-        }
-        EmpWage=EmpHrs*Emp_RATE_PER_Hr;
-        System.out.println("Employee Wage : "+ EmpWage);
-
+        EmpWage = EmpHr * Emp_RATE_PER_HR;
+        System.out.println("Employee Wage : " + EmpWage);
     }
 }
